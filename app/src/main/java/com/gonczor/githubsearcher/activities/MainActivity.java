@@ -2,7 +2,9 @@ package com.gonczor.githubsearcher.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 
 import com.gonczor.githubsearcher.R;
 import com.gonczor.githubsearcher.models.Repo;
@@ -22,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.user_toolbar);
+        setSupportActionBar(myToolbar);
+
         String user = "gonczor";
 
         ApiInterface service = Client.getClient().create(ApiInterface.class);
@@ -39,5 +44,11 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MainActivity", t.toString());
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        Log.i("onCreateOptionsMenu", "Options");
+        return true;
     }
 }
