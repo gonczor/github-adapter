@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.gonczor.githubsearcher", appContext.getPackageName());
+        assertEquals("com.gonczor.githubsearcher/dupa", appContext.getPackageName());
     }
 }
